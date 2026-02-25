@@ -24,18 +24,32 @@ public class SelectionSort {
 
         // Asending order sorting
         /**
-         * To sort it in a descending order:
-         * Run the outer loop from 0 to lengthOfArr, where j <= lengthOfArr
-         * Run the inner loop from 0 to i, where j <= i
+         * Start outer loop from i = 0 to n - 2
+         * 
+         * Assume minIndex = i
+         * 
+         * Run inner loop from j = i + 1 to n - 1
+         * 
+         * If arr[j] < arr[minIndex]
+         * → update minIndex = j
+         * 
+         * After inner loop ends
+         * → swap arr[i] and arr[minIndex]
+         * 
+         * Repeat
          */
-        for (int i = lengthOfArr; i >= 0; i--) {
-            for (int j = lengthOfArr; j >= i; j--) {
-                if (arr[j] < arr[i]) {
-                    int temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
+        for (int i = 0; i < lengthOfArr; i++) {
+            int minIndex = i;
+
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
                 }
             }
+
+            int temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
         }
 
         for (int num : arr) {
