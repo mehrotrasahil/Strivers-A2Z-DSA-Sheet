@@ -18,8 +18,11 @@ public class NumberWithAppreanceOne {
     public static void main(String[] args) {
         int[] arr = { 4, 1, 2, 1, 2 };
 
+        // Optimized approach
         int uniqueNum = getUniqueNum(arr);
         System.out.println(uniqueNum);
+
+        // Better approach
         Map<Integer, Integer> count = new HashMap<>();
 
         for (int num : arr) {
