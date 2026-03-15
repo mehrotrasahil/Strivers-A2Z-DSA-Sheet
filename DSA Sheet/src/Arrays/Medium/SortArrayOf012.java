@@ -31,7 +31,6 @@ public class SortArrayOf012 {
                 cnt0++;
             else if (arr[i] == 1)
                 cnt1++;
-
         }
 
         // Replacing value of arr[i] with 0s,1s and 2s till the total number of 0,1 and
